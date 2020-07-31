@@ -23,7 +23,7 @@
 	<tr>
 		<td><%= variablecost_value.year_month.strftime('%Y年%m月') %></td>
 		<td><%= @variablecosts.find(variablecost_value.variablecost_id).name %></td>
-		<td><%= variablecost_value.value.to_s(:delimited) %> 円</td>
+		<td><%= variablecost_value.value&.to_s(:delimited) %> 円</td>
 		<td><%= variablecost_value.description %></td>
 		<td>
 		<%= link_to "編集", [:edit, variablecost_value] %> |
