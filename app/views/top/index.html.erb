@@ -30,3 +30,14 @@
 <ul>
 <li><%= link_to "収支確認画面", balance_confirm_path %></li>
 </ul>
+
+<h2>年間収支確認</h2>
+<%= form_tag({controller: :balance_confirm, action: :show_year}, {method: :post}) do %>
+	<input type="hidden" name="year">
+		<select name="year">
+ 			<% 2010.upto(2050) do |n| %>
+				<option value=<%= n.to_s %>><%= n %></option>
+			<% end %>
+		</select>
+	<input type="submit">
+<% end %>
