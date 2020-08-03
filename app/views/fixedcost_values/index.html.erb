@@ -1,20 +1,24 @@
 <% require 'active_support/core_ext/numeric/conversions' %>
+<br>
 <h2>固定費科目のデータ登録</h2>
+<br>
 <p>登録年月を設定してください</p>
 <%= form_tag({controller: :fixedcost_values, action: :new}, {method: :post}) do %>
 	<input type="month" name="year_month">
 	<input type="submit">
 <% end %>
-
+<br>
+<br>
 <h2>固定費科目 データ一覧 </h2>
+<br>
 <% if @fixedcost_values.present? %>
 <table>
   <tr>
-    <th>登録年月</th>
-    <th>名称</th>
-    <th>値</th>
-    <th>備考</th>
-		<th>操作</th>
+    <th>登録年月　　　</th>
+    <th>名称　　　</th>
+    <th>値　　　</th>
+    <th>備考　　　</th>
+		<th>操作　　　</th>
   </tr>
 	<% @fixedcost_values.each do |fixedcost_value| %>
 	<tr>
@@ -23,7 +27,7 @@
 		<td><%= fixedcost_value.value&.to_s(:delimited) %> 円</td>
 		<td><%= fixedcost_value.description %></td>
 		<td>
-		<%= link_to "編集", [:edit, fixedcost_value] %> |
+		<%= link_to "編集", [:edit, fixedcost_value] %> /
 		<%= link_to "削除", fixedcost_value, method: :delete,
 			data: { confirm: "本当に削除しますか？"} %>
 		</td>
@@ -33,3 +37,5 @@
 <% else %>
 	<p>登録されているデータがありません。</p>
 <% end %>
+<br>
+<%= link_to "トップへ戻る", root_path %>

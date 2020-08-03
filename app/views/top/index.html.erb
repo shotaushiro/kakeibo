@@ -1,45 +1,59 @@
- <h2><%= current_user.name %> さんの家計簿</h2>
- <br>
+<h2><%= current_user.name %> さんの家計簿</h2>
+<br>
+<div class="container">
+	<div class="row">
+		
+		<div class="col-md-3 col-sm-6">		
+			<h4>科目設定</h4>
+			<br>
+			<ul>
+    			<li><%= link_to "収入科目設定", :incomes %></li>
+			</ul>
+			<ul>
+    			<li><%= link_to "固定費科目設定", :fixedcosts %></li>
+			</ul>
 
-<h4>科目設定</h4>
-<ul>
-    <li><%= link_to "収入科目設定", :incomes %></li>
-</ul>
+			<ul>
+    			<li><%= link_to "変動費科目設定", :variablecosts %></li>
+			</ul>
+		</div>
+		
+		<div class="col-md-3 col-sm-6">
+			<h4>収支登録</h4>
+			<br>
+			<ul>
+    			<li><%= link_to "収支金額登録", :income_values %></li>
+			</ul>
 
-<ul>
-    <li><%= link_to "固定費科目設定", :fixedcosts %></li>
-</ul>
+			<ul>
+				<li><%= link_to "固定費金額登録", :fixedcost_values %></li>
+			</ul>
 
-<ul>
-    <li><%= link_to "変動費科目設定", :variablecosts %></li>
-</ul>
-
-<h4>収支登録</h4>
-<ul>
-    <li><%= link_to "収支金額登録", :income_values %></li>
-</ul>
-
-<ul>
-	<li><%= link_to "固定費金額登録", :fixedcost_values %></li>
-</ul>
-
-<ul>
-	<li><%= link_to "変動費金額登録", :variablecost_values %></li>
-</ul>
-
-<h4>収支確認</h4>
-<ul>
-<li><%= link_to "収支確認画面", balance_confirm_path %></li>
-</ul>
-
-<h4>年間収支確認</h4>
-<%= form_tag({controller: :balance_confirm, action: :show_year}, {method: :post}) do %>
-	<input type="hidden" name="year">
-		<select name="year">
- 			<% 2010.upto(2050) do |n| %>
-				<option value=<%= n.to_s %>><%= n %></option>
+			<ul>
+				<li><%= link_to "変動費金額登録", :variablecost_values %></li>
+			</ul>
+		</div>
+		
+		<div class="col-md-3 col-sm-6">
+			<h4>収支確認</h4>
+			<br>
+			<ul>
+				<li><%= link_to "収支確認画面", balance_confirm_path %></li>
+			</ul>
+		</div>
+		
+		<div class="col-md-3 col-sm-6">
+			<h4>年間収支確認</h4>
+			<br>
+			<%= form_tag({controller: :balance_confirm, action: :show_year}, {method: :post}) do %>
+				<input type="hidden" name="year">
+				<select name="year">
+ 					<% 2010.upto(2050) do |n| %>
+						<option value=<%= n.to_s %>><%= n %></option>
+					<% end %>
+				</select>
+				<input type="submit">
 			<% end %>
-		</select>
-	<input type="submit">
-<% end %>
-
+		</div>
+	</div>
+</div>
