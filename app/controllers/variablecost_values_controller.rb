@@ -1,4 +1,5 @@
 class VariablecostValuesController < ApplicationController
+  before_action :require_user_logged_in
   def index
 		@variablecosts = Variablecost.order(created_at: :asc)
 		@variablecost_values = VariablecostValue.all.order(year_month: :asc)

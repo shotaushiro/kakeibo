@@ -1,4 +1,5 @@
 class BalanceConfirmController < ApplicationController
+  before_action :require_user_logged_in
   def top
   end
 

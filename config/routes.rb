@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
+  get 'users/index'
+  get 'users/show'
+  get 'users/new'
+  get 'users/create'
   root 'top#index'
   post "income_values/new(/:name)" => "income_values#new"
   post "fixedcost_values/new(/:name)" => "fixedcost_values#new"
@@ -7,6 +14,12 @@ Rails.application.routes.draw do
   get "balance_confirm" => "balance_confirm#top"
 	post "balance_confirm/show(/:name)" => "balance_confirm#show"
 	post "blance_confirm/show_year(/:name)" => "balance_confirm#show_year"
+	
+	get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+	get 'signup', to: 'users#new'
+	resources :users, only: [:new, :create]
 	
   resources :incomes
   resources :fixedcosts

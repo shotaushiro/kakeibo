@@ -1,4 +1,5 @@
 class IncomesController < ApplicationController
+  before_action :require_user_logged_in
   def index
     @incomes = Income.order(created_at: :asc)
   end

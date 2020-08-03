@@ -1,4 +1,5 @@
 class FixedcostValuesController < ApplicationController
+  before_action :require_user_logged_in
   def index
 		@fixedcosts = Fixedcost.order(created_at: :asc)
 		@fixedcost_values = FixedcostValue.all.order(year_month: :asc)
