@@ -13,7 +13,7 @@
 			 <td><%= form.date_select :year_month,
 	 						start_year: 2010, end_year: Time.current.year,
 	 						use_month_numbers: true, discard_day: true %></td>
-			 <th><%= @variablecost.name %></th>
+			 <th><%= @variablecost&.name %></th>
 	 		 <td><%= form.text_field :value %></td>
 	 		 <td><%= form.text_field :description %></td>
 		 </tr>

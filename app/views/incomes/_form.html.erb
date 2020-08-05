@@ -1,4 +1,16 @@
+<% if @income.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@income.errors.count, "error") %> prohibited this income from being saved:</h2>
+
+      <ul>
+        <% @income.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+ <% end %>
 <%= link_to "収入科目一覧に戻る", :incomes %>
+
 <table>
     <tr>
         <th><%= form.label :name, "名称" %></th>

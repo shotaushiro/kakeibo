@@ -1,3 +1,14 @@
+<% if @fixedcost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fixedcost.errors.count, "error") %> prohibited this income from being saved:</h2>
+
+      <ul>
+        <% @fixedcost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+ <% end %>
 <%= link_to "固定費科目一覧に戻る", :fixedcosts %>
 <table>
     <tr>

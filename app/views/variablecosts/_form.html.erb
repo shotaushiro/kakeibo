@@ -1,3 +1,13 @@
+<% if @variablecost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@variablecost.errors.count, "error") %> prohibited this income from being saved:</h2>
+      <ul>
+        <% @variablecost.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+ <% end %>
 <%= link_to "変動費科目一覧に戻る", :variablecosts %>
 <table>
     <tr>
