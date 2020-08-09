@@ -1,24 +1,37 @@
-# README
+### アプリURL
+[家計簿アプリはこちらからどうぞ](https://serene-cove-63742.herokuapp.com/login)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Email : test@1.com  
+Password : test
 
-Things you may want to cover:
+こちらでログインできます
+***
 
-* Ruby version
 
-* System dependencies
+### 概要
+長期インターンのポートフォリオ用Railsで家計簿アプリを作成しました。
+***
+### バージョン
+Ruby 2.4.5  
+Rails 5.2.2
+***
+### 実装機能
 
-* Configuration
+#### 家計簿関連
+・一覧機能
+・削除機能
+・編集機能
+・詳細機能
+・収支確認機能
+・グラフ機能（JSで実装）
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### ユーザー関連
+・登録機能  
+・ログイン、ログアウト機能  
+***
+### その他
+・Cloud9で作成  
+・Bootstrapでデザイン  
+・JavaScriptによるグラフ作成  
+・Mysqlによるデータ管理  
+・herokuにデプロイ
